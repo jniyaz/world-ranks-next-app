@@ -7,6 +7,9 @@
     background-color: transparent;
     outline: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .heading_name, .heading_population {
@@ -17,7 +20,15 @@
 }
 
 .heading_name {
-    text-align: left;
+    justify-content: flex-start !important;
+}
+
+.heading_arrow {
+    color: var(--primary-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .row {
