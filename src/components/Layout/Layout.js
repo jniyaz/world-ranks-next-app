@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from 'next/image'
+import Link from "next/Link";
 import styles from './Layout.module.css'
 
 const Layout = ({ children, title= "Countries App" }) => {
@@ -11,7 +11,9 @@ const Layout = ({ children, title= "Countries App" }) => {
             </Head>
 
             <header className={styles.header}>
-                <Image src="/logo.png" alt="Logo" width={100} height={60} quality={100} />
+                <Link href="/">
+                    <img src="/logo.png" width="120px" alt="Logo" />
+                </Link>
             </header>
 
             <main className={styles.main}>{children}</main>
