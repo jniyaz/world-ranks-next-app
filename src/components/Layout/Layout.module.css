@@ -9,15 +9,22 @@
 }
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
 }
 
 .footer {
+    display: flex;
+    justify-content: space-between;
     margin-top: 10px;
     text-align: center;
     font-size: 0.75rem;
+    color: var(--text-color-secondary);
+}
+
+.footer_label {
+    margin: 10px 0px;
 }
 
 .theme_switcher {

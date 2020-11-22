@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import Link from "next/Link";
+import Link from 'next/link';
 import styles from './Layout.module.css'
-import { Brightness6Rounded } from "@material-ui/icons";
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 
 const Layout = ({ children, title= "Countries App" }) => {
     const [theme, setTheme] = useState("light");
@@ -35,17 +35,18 @@ const Layout = ({ children, title= "Countries App" }) => {
 
             <header className={styles.header}>
                 <Link href="/">
-                    <img src="/logo.png" width="120px" alt="Logo" />
+                    <img src="/logo.png" width="80px" alt="Logo" />
                 </Link>
                 <button className={styles.theme_switcher} onClick={switchTheme}>
-                    <Brightness6Rounded />
+                    <Brightness4Icon />
                 </button>
             </header>
 
             <main className={styles.main}>{children}</main>
 
             <footer className={styles.footer}>
-            Niyaz @ n-labs.in
+                <div className={styles.footer_label}>&copy; Niyaz @ https://jniyaz.github.io/niyaz</div>
+                <div className={styles.footer_label}>Credits: Thu Nghiem</div>
             </footer>
         </div>
     )

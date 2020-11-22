@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import Link from 'next/link';
 import Layout from "../../components/Layout/Layout";
 import styles from './Country.module.css';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const getCountry = async (id) => {
     const res = await fetch(`https://restcountries.eu/rest/v2/alpha/${id}`);
@@ -25,8 +27,12 @@ const Country = ({ country }) => {
 
     return (
         <Layout title={country.name}>
+            <div>
+                <Link href="/">
+                    <div className={styles.details_breadcrumps}><ArrowBackIosIcon /> Go Back</div>
+                </Link>
+            </div>
             <div className={styles.details_container}>
-
                 <div className={styles.details_container_left}>
                     {/* Overview */}
                     <div className={styles.overview_panel}>
