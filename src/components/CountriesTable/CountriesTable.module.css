@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.heading_name, .heading_population {
+.heading_name, .heading_population, .heading_area, .heading_gini  {
     flex: 1;
     color: var(--text-color-secondary);
     padding: 20px;
@@ -52,7 +52,12 @@
     flex: 1;
     text-align: left;
 }
-
 .population {
+    flex: 1;
+}
+.area {
+    flex: 1;
+}
+.gini {
     flex: 1;
 }

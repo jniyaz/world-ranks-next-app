@@ -103,7 +103,31 @@ const Country = ({ country }) => {
 
 export default Country;
 
-export const getServerSideProps = async ({params}) => {
+// // only on ssr
+// export const getServerSideProps = async ({params}) => {
+//     const country = await getCountry(params.id);
+//     return {
+//         props: {
+//             country
+//         }
+//     }
+// }
+
+export const getStaticPaths = async() => {
+    const res = await fetch('https://restcountries.eu/rest/v1/all');
+    const countries = await res.json();
+    const paths = countries.map(country => ({
+        params: {id: country.alpha3Code},
+    }));
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+// on prerender
+export const getStaticProps = async ({params}) => {
     const country = await getCountry(params.id);
     return {
         props: {
@@ -111,3 +135,4 @@ export const getServerSideProps = async ({params}) => {
         }
     }
 }
+
